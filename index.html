@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101512"><title>Downtime</title>
+<link rel="stylesheet" href="style.css"><script src="app.js" defer></script>
+</head>
+<body>
+<main>
+  <header><div><h1>Downtime</h1><span id="count">0 saved entries</span></div><span class="local">On this device</span></header>
+  <section class="summary" aria-label="Total downtime"><div><span class="label">TOTAL DOWNTIME · HRS:MIN</span><strong id="total">00:00</strong></div><button id="add" aria-label="Start downtime">+</button></section>
+  <div class="list-heading"><span>Logs</span><span id="activeCount">0 active</span></div>
+  <section id="logs" aria-label="Downtime logs"></section>
+  <footer>Ended logs expire after 12 hours · Active logs stay</footer>
+  <p id="notice" role="status" hidden></p>
+</main>
+<dialog id="editor"><form id="editForm"><h2>Edit downtime</h2><label>Start time<input id="startInput" type="text" inputmode="text" placeholder="3:15 PM" required autocomplete="off" spellcheck="false"></label><label>End time <span>(blank = active)</span><input id="endInput" type="text" placeholder="3:45 PM" autocomplete="off" spellcheck="false"></label><p class="hint">Type a time or use the scrollers · AM/PM.<br>An earlier end time means the next day.</p><p id="editError" role="alert"></p><div class="dialog-actions"><button type="button" id="cancelEdit">Cancel</button><button class="save" type="submit">Save changes</button></div></form></dialog>
+<dialog id="deleteDialog"><h2>Delete this entry?</h2><p>This cannot be undone.</p><div class="dialog-actions"><button id="cancelDelete">Keep entry</button><button id="confirmDelete" class="end">Delete</button></div></dialog>
+</body></html>
+
